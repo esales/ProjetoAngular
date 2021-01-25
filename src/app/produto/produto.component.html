@@ -1,0 +1,73 @@
+<button (click)="alternar()">Alternar</button>
+
+<h1 *ngIf="esconder">Exemplo 2</h1>
+
+<h1 [textContent]="esconder">Exemplo 1</h1>
+
+<h1 [attr.exemplo]="exemplo">Exemplo de attribute binding</h1>
+
+<h2 [class.azul]="esconder">Propriedade esconder: {{ esconder }} </h2>
+
+<p class="{{estilo}}">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
+
+<p>
+  Podemos criar expressões: {{ 1 + 3 + numero}}
+</p>
+
+
+<p [class.azul]=booleano>Testando class binding - 1 classe.</p>
+
+<p [class]=listaDeClasses>Testando class binding - multiplas classes.</p>
+
+<div [style.height]="altura"></div>
+
+<div [style.height.px]="alturaSemUnidadeMedida"></div>
+
+<div [style]=colecaoDePropriedades></div>
+
+<input type="text" [(ngModel)]="nome" />
+<p>{{nome}}</p>
+
+
+<p [textContent]="nome"></p>
+
+<button (click)="clicou()">Clique!</button>
+<p>{{contadorClique}}</p>
+
+<p [ngClass]="classes">Testando diretiva ngClass</p>
+
+<p [ngClass]="booleano?'azul':'negrito'">Testando diretiva ngClass 2</p>
+
+<p [ngStyle]="booleano?colecaoDePropriedades:colecaoDePropriedades2">Testando diretiva ngStyle</p>
+
+<p *ngIf="booleano">Testando diretiva ngIf</p>
+
+<section *ngFor="let pessoa of pessoas">
+    <h4>Nome: {{pessoa.nome}} </h4>
+    <h4>Idade: {{pessoa.idade}} </h4>
+</section>
+
+
+<div [ngSwitch]="opcao">
+  <h1 *ngSwitchCase="'h1'">H1</h1>
+  <h1 *ngSwitchCase="'h1'">outro H1</h1>
+  <h2 *ngSwitchCase="'h2'">H2</h2>
+  <h3 *ngSwitchCase="'h3'">H3</h3>
+  <h4 *ngSwitchCase="'h4'">H4</h4>
+  <h5 *ngSwitchCase="'h5'">H5</h5>
+  <h6 *ngSwitchCase="'h6'">H6</h6>
+  <p  *ngSwitchDefault>Parágrafo</p>
+</div>
+
+<br>
+
+<button (click)="teste()">Chamar serviço!</button>
+
+<div *ngFor="let produto of listagemProdutos | async">
+  <h4> {{ produto.name }} </h4>
+</div>
+<br><br>
+
+
